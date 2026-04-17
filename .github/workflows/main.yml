@@ -52,8 +52,11 @@ jobs:
       - name: Créer le fichier d'environnement
         run: |
           cp .env.docker .env
+      - name: Migrer la bdd
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -u root -prootpw < db.sql
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
     
 
 # job : build (environnemt du projet)
