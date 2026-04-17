@@ -40,13 +40,6 @@ jobs:
           php-version: '8.3'
           extensions: pdo_mysql, intl, mbstring, zip
           tools: composer
-      - name: installer les dépendances
-        run: | 
-          composer install
-      - name: démarrer le serveur PHP
-        run: |
-          php -S 127.0.0.1:8000 -t public &
-      
       # CREATION DU FICHIER .ENV 
       - name: Créer le fichier d'environnement
         run: |
@@ -54,6 +47,14 @@ jobs:
       - name: Migrer la bdd
         run: |
           mysql -h 127.0.0.1 -P 3306 -u root -prootpw < db.sql
+      - name: installer les dépendances
+        run: | 
+          composer install
+      - name: démarrer le serveur PHP
+        run: |
+          php -S 127.0.0.1:8000 -t public &
+      
+      
       - name: Cypress run
         uses: cypress-io/github-action@v7
     
