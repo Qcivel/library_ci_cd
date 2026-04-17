@@ -3,9 +3,7 @@ describe('Tests de l\'application bibli', () => {
     beforeEach(() => {
       // On considère que l'app tourne sur le port par défaut de Vite
       cy.visit('http://127.0.0.1:8000/');
-      it('Se Connecter ', () => {
-    
-      })
+      
     })
     
     // Créer une catégorie
@@ -41,7 +39,7 @@ describe('Tests de l\'application bibli', () => {
     // })
 
     // Se déconnecter
-    it('Ajouter un livre ', () => {
+    it('Se déconnecter ', () => {
       cy.get('input[name="email"]').type('Ed.snowden@gmail.ru');
       cy.get('input[name="password"]').type('123');
       cy.get('button').click();
