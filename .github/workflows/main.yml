@@ -47,8 +47,7 @@ jobs:
         run: |
           php -S 127.0.0.1:8000 -t public &
       
-
-      # CREATION DU FICHIER .ENV (Nouveau)
+      # CREATION DU FICHIER .ENV 
       - name: Créer le fichier d'environnement
         run: |
           cp .env.docker .env

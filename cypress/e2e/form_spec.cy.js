@@ -33,7 +33,7 @@ describe('Tests de l\'application bibli', () => {
 
     // Se déconnecter
     it('Se déconnecter ', () => {
-      cy.visit('http://localhost:8080/');
+      cy.visit('http://127.0.0.1:8000/');
       // cy.get('input[name="email"]').type('Ed.snowden@gmail.ru');
       // cy.get('input[name="password"]').type('123');
       // cy.get('button').click();
