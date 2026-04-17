@@ -46,20 +46,12 @@ jobs:
       - name: démarrer le serveur PHP
         run: |
           php -S 127.0.0.1:8000 -t public &
+      
+
       # CREATION DU FICHIER .ENV (Nouveau)
-      - name: Créer le fichier .env pour le CI
+      - name: Créer le fichier d'environnement
         run: |
-          cat << EOF > .env
-          DATABASE_HOST=127.0.0.1
-          DATABASE_PORT=3306
-          DATABASE_USERNAME=root
-          DATABASE_PASSWORD=rootpw
-          DATABASE_NAME=ci_cd
-          UPLOAD_DIRECTORY=public/assets/uploads
-          UPLOAD_PUBLIC_PATH=/assets/uploads
-          UPLOAD_SIZE_MAX=2097152
-          UPLOAD_FORMAT_WHITE_LIST=["png","jpg","jpeg","webp"]
-          EOF
+          cp .env.docker .env
       - name: Cypress run
         uses: cypress-io/github-action@v6
     
