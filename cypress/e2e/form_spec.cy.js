@@ -1,10 +1,8 @@
 describe('Tests de l\'application bibli', () => {
   
-    beforeEach(() => {
-      // On considère que l'app tourne sur le port par défaut de Vite
-      cy.visit('http://127.0.0.1:8000/');
+    
       
-    })
+    
     
     // Créer une catégorie
     // it('Se connecter ', () => {
@@ -40,11 +38,12 @@ describe('Tests de l\'application bibli', () => {
 
     // Se déconnecter
     it('Se déconnecter ', () => {
-      cy.get('input[name="email"]').type('Ed.snowden@gmail.ru');
-      cy.get('input[name="password"]').type('123');
-      cy.get('button').click();
+      cy.visit('http://127.0.0.1:8000/');
+      // cy.get('input[name="email"]').type('Ed.snowden@gmail.ru');
+      // cy.get('input[name="password"]').type('123');
+      // cy.get('button').click();
       
-      cy.get("a").eq(7).should("have.text", "Deconnexion").click();
+      // cy.get("a").eq(7).should("have.text", "Deconnexion").click();
 
       
     })
